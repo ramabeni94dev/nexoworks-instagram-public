@@ -1,0 +1,1059 @@
+.nexo-ig-shell {
+  display: grid;
+  gap: 1.5rem;
+  justify-items: center;
+  color: var(--black, #111111);
+}
+
+.nexo-ig-profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  max-width: 42rem;
+  padding-inline: 1rem;
+}
+
+.nexo-ig-profile-picture {
+  flex: 0 0 72px;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.nexo-ig-profile-details { min-width: 0; }
+.nexo-ig-profile-name { margin: 0 0 0.25rem; font-size: 1.1rem; font-weight: 600; }
+.nexo-ig-profile-link { color: inherit; text-underline-offset: 0.2em; }
+.nexo-ig-profile-bio { margin: 0.5rem 0 0; font-size: 0.9rem; line-height: 1.6; white-space: pre-line; overflow-wrap: anywhere; }
+.nexo-ig-shell :focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+
+.nexo-ig-panel {
+  display: grid;
+  gap: clamp(2rem, 4vw, 3.75rem);
+  width: 100%;
+  min-width: 0;
+  justify-items: center;
+  padding: 0;
+  background: transparent;
+}
+
+.nexo-ig-flash {
+  width: min(100%, 58rem);
+  margin-inline: auto;
+  padding: 0.95rem 1.1rem;
+  border-radius: 1rem;
+  text-align: center;
+  font-size: 0.94rem;
+  line-height: 1.5;
+}
+
+.nexo-ig-flash[data-tone="success"] {
+  background: rgba(111, 147, 98, 0.16);
+}
+
+.nexo-ig-flash[data-tone="error"] {
+  background: rgba(173, 87, 74, 0.14);
+}
+
+.nexo-ig-flash[data-tone="info"] {
+  background: rgba(17, 17, 17, 0.08);
+}
+
+.nexo-ig-slider-block {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2.25rem);
+  width: 100%;
+  min-width: 0;
+  max-width: 82rem;
+  justify-items: center;
+  margin-inline: auto;
+}
+
+.nexo-ig-slider-heading {
+  display: grid;
+  justify-items: center;
+}
+
+.nexo-ig-slider-title {
+  margin: 0;
+  text-align: center;
+  font-size: clamp(1.8rem, 3vw, 2.45rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.nexo-ig-slider-frame {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  max-width: 82rem;
+  margin-inline: auto;
+}
+
+.nexo-ig-grid {
+  display: grid;
+  width: 100%;
+  max-width: 82rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.125rem;
+  margin-inline: auto;
+}
+
+.nexo-ig-slider-viewport {
+  overflow-x: auto;
+  min-width: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.nexo-ig-slider-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.nexo-ig-slider-track {
+  display: flex;
+  gap: 0.125rem;
+  width: max-content;
+  margin-inline: auto;
+}
+
+.nexo-ig-slide,
+.nexo-ig-placeholder-slide {
+  position: relative;
+  flex: 0 0 clamp(220px, 19vw, 255px);
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  scroll-snap-align: start;
+  background: rgba(17, 17, 17, 0.08);
+}
+
+.nexo-ig-slide {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.nexo-ig-grid .nexo-ig-slide,
+.nexo-ig-grid .nexo-ig-placeholder-slide {
+  width: 100%;
+  min-width: 0;
+}
+
+/* Reference layouts: a seamless photo wall and four editorial post cards. */
+.nexo-ig-reference-layout { container-type: inline-size; width: 100%; min-width: 0; }
+.nexo-ig-shell:is([data-template="photo-wall"], [data-template="social-cards"]) .nexo-ig-slider-block {
+  gap: 28px;
+}
+.nexo-ig-shell[data-template="photo-wall"] .nexo-ig-slider-title {
+  font-size: 22px;
+  line-height: 1.3;
+  letter-spacing: -.035em;
+}
+.nexo-ig-shell[data-template="photo-wall"] .nexo-ig-reference-layout {
+  display: grid;
+  gap: 32px;
+  justify-items: center;
+}
+.nexo-ig-shell[data-template="photo-wall"] .nexo-ig-profile {
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: min(100%, 42rem);
+  gap: 32px;
+}
+.nexo-ig-shell[data-template="photo-wall"] .nexo-ig-profile-picture {
+  flex-basis: 48px;
+  width: 48px;
+  height: 48px;
+  border-radius: 0;
+}
+.nexo-ig-shell[data-template="photo-wall"] .nexo-ig-profile-name {
+  font-size: 1rem;
+}
+.nexo-ig-shell[data-template="photo-wall"] .nexo-ig-profile-link {
+  font-size: 1rem;
+}
+.nexo-ig-shell[data-template="photo-wall"] .nexo-ig-profile-bio {
+  max-width: 50ch;
+  font-size: 0.94rem;
+}
+.nexo-ig-shell[data-template="social-cards"] .nexo-ig-slider-title {
+  font-size: 28px;
+  line-height: 1.2;
+}
+.nexo-ig-photo-wall {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  width: 100%;
+  gap: 0;
+}
+.nexo-ig-photo-wall .nexo-ig-slide,
+.nexo-ig-photo-wall .nexo-ig-placeholder-slide {
+  display: block;
+  min-width: 0;
+  /* Instagram portrait format: 1080 x 1350. */
+  aspect-ratio: 4 / 5;
+}
+.nexo-ig-photo-wall > :nth-child(n + 11) { display: none; }
+.nexo-ig-photo-wall .nexo-ig-slide-image,
+.nexo-ig-social-image .nexo-ig-slide-image {
+  display: block;
+}
+.nexo-ig-media-type {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  color: white;
+  filter: drop-shadow(0 1px 3px rgb(0 0 0 / .5));
+  pointer-events: none;
+}
+.nexo-ig-media-type svg { display: block; width: 100%; height: 100%; }
+.is-social-cards .nexo-ig-slider-track {
+  width: 100%;
+  gap: 24px;
+  margin: 0;
+}
+.nexo-ig-social-card,
+.is-social-cards .is-social-card {
+  flex: 0 0 calc((100% - 72px) / 4);
+  min-width: 0;
+  scroll-snap-align: start;
+}
+.nexo-ig-social-card {
+  display: flex;
+  flex-direction: column;
+  /* The visible card border is part of the supplied client reference. */
+  border: 1px solid oklch(91% .003 80);
+  background: oklch(99.9% .001 80);
+  color: oklch(20% .005 80);
+}
+.nexo-ig-social-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 64px;
+  padding: 10px 14px;
+}
+.nexo-ig-social-header time,
+.nexo-ig-social-header > span {
+  color: oklch(45% .005 80);
+  font-size: 10px;
+  line-height: 1.4;
+  letter-spacing: .035em;
+  text-transform: uppercase;
+}
+.nexo-ig-social-header a {
+  display: grid;
+  place-items: center;
+  flex: 0 0 40px;
+  height: 40px;
+  color: inherit;
+}
+.nexo-ig-social-header .nexo-ig-slide-icon {
+  background: transparent;
+  color: inherit;
+}
+.nexo-ig-social-header .nexo-ig-slide-icon svg { width: 26px; height: 26px; }
+.nexo-ig-social-card .nexo-ig-social-image {
+  display: block;
+  flex: none;
+  width: 100%;
+  aspect-ratio: 1;
+}
+.nexo-ig-social-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 14px 14px 10px;
+  min-height: 196px;
+  flex: 1;
+}
+.nexo-ig-social-copy {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  white-space: pre-line;
+  font-size: 15px;
+  line-height: 1.4;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+.nexo-ig-share {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  align-self: flex-end;
+  min-height: 44px;
+  margin-top: auto;
+  color: inherit;
+  font-size: 14px;
+  text-decoration: none;
+}
+.nexo-ig-share:hover { text-decoration: underline; text-underline-offset: 4px; }
+.nexo-ig-share svg { width: 26px; height: 26px; flex-shrink: 0; }
+.nexo-ig-share-status {
+  margin: 0;
+  min-height: 20px;
+  font-size: 13px;
+  text-align: center;
+  color: oklch(45% .005 80);
+}
+.is-social-cards .nexo-ig-slider-button {
+  width: 44px;
+  height: 56px;
+  border-radius: 0;
+  background: rgb(20 20 20 / .88);
+  color: white;
+  box-shadow: none;
+  top: calc(64px + (100cqw - 72px) / 8);
+}
+.is-social-cards .nexo-ig-slider-button.is-prev { left: 0; }
+.is-social-cards .nexo-ig-slider-button.is-next { right: 0; }
+@container (max-width: 999px) {
+  .nexo-ig-photo-wall { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .nexo-ig-photo-wall > :nth-child(n + 7) { display: none; }
+  .nexo-ig-social-card, .is-social-cards .is-social-card { flex-basis: calc((100% - 24px) / 2); }
+  .is-social-cards .nexo-ig-slider-button { top: calc(64px + (100cqw - 24px) / 4); }
+}
+@container (max-width: 559px) {
+  .nexo-ig-photo-wall { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .nexo-ig-photo-wall > :nth-child(n + 5) { display: none; }
+  .nexo-ig-shell[data-template="photo-wall"] .nexo-ig-slider-title { font-size: 20px; }
+  .nexo-ig-shell[data-template="photo-wall"] .nexo-ig-profile { gap: 16px; }
+  .is-social-cards .nexo-ig-slider-track { gap: 16px; }
+  .nexo-ig-social-card, .is-social-cards .is-social-card { flex-basis: 100%; }
+  .is-social-cards .nexo-ig-slider-button { top: calc(64px + 50cqw); }
+}
+
+.nexo-ig-slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.001);
+  transition: transform 360ms ease;
+}
+
+.nexo-ig-slide-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.02) 30%, rgba(0, 0, 0, 0.24) 100%);
+  pointer-events: none;
+}
+
+.nexo-ig-slide-top {
+  position: absolute;
+  inset: 0.7rem 0.7rem auto;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.nexo-ig-slide-caption {
+  display: -webkit-box;
+  max-width: calc(100% - 2.5rem);
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.96);
+  font-size: 0.88rem;
+  line-height: 1.3;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.28);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.nexo-ig-slide-icon {
+  display: grid;
+  width: 1.7rem;
+  height: 1.7rem;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.84);
+  color: #111111;
+  border-radius: 0.45rem;
+  flex-shrink: 0;
+}
+
+.nexo-ig-slide-icon svg {
+  width: 0.95rem;
+  height: 0.95rem;
+  fill: currentColor;
+}
+
+.nexo-ig-slide:hover .nexo-ig-slide-image,
+.nexo-ig-slide:focus-visible .nexo-ig-slide-image {
+  transform: scale(1.045);
+}
+
+.nexo-ig-slider-button {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  display: grid;
+  padding: 0;
+  width: 3.25rem;
+  height: 3.25rem;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.96);
+  color: #111111;
+  border: 0;
+  border-radius: 999px;
+  box-shadow: 0 0.8rem 2rem rgba(32, 24, 19, 0.16);
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.nexo-ig-slider-button.is-prev {
+  left: -1rem;
+}
+
+.nexo-ig-slider-button.is-next {
+  right: -1rem;
+}
+
+.nexo-ig-control-icon {
+  display: grid;
+  place-items: center;
+  width: 1.15rem;
+  height: 1.15rem;
+  line-height: 0;
+}
+
+.nexo-ig-control-icon.is-close {
+  width: 1rem;
+  height: 1rem;
+}
+
+.nexo-ig-control-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.nexo-ig-slider-button:hover:not(:disabled),
+.nexo-ig-slider-button:focus-visible:not(:disabled) {
+  transform: translateY(-50%) scale(1.02);
+  box-shadow: 0 1rem 2.2rem rgba(32, 24, 19, 0.22);
+}
+
+.nexo-ig-slider-button:disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nexo-ig-loading-copy,
+.nexo-ig-empty {
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+  text-align: center;
+}
+
+.nexo-ig-loading-copy {
+  color: rgba(79, 58, 35, 0.74);
+  font-size: 0.95rem;
+}
+
+.nexo-ig-empty-copy,
+.nexo-ig-note {
+  margin: 0;
+  max-width: 58ch;
+  margin-inline: auto;
+  color: rgba(79, 58, 35, 0.84);
+  text-align: center;
+  line-height: 1.55;
+}
+
+.nexo-ig-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.nexo-ig-connect-button {
+  min-height: auto;
+}
+
+.nexo-ig-secondary-action {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.nexo-ig-secondary-action:hover,
+.nexo-ig-secondary-action:focus-visible {
+  opacity: 1;
+}
+
+.nexo-ig-placeholder-slide {
+  background:
+    linear-gradient(135deg, rgba(244, 231, 214, 0.74), rgba(214, 198, 180, 0.8));
+}
+
+.nexo-ig-placeholder-sheen {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(110deg, transparent 0%, rgba(255, 255, 255, 0.15) 32%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.15) 68%, transparent 100%);
+  transform: translateX(-100%);
+  animation: nexo-ig-sheen 2.8s ease-in-out infinite;
+}
+
+.nexo-ig-placeholder-sheen-2 {
+  animation-delay: 0.2s;
+}
+
+.nexo-ig-placeholder-sheen-3 {
+  animation-delay: 0.4s;
+}
+
+.nexo-ig-placeholder-sheen-4 {
+  animation-delay: 0.6s;
+}
+
+.nexo-ig-placeholder-sheen-5 {
+  animation-delay: 0.8s;
+}
+
+.nexo-ig-slider-frame.is-hashtag .nexo-ig-slider-track {
+  gap: 1rem;
+}
+
+.nexo-ig-slider-frame.is-hashtag .nexo-ig-slider-button.is-prev,
+.nexo-ig-slider-frame.is-post-slider .nexo-ig-slider-button.is-prev {
+  left: 0.75rem;
+}
+
+.nexo-ig-slider-frame.is-hashtag .nexo-ig-slider-button.is-next,
+.nexo-ig-slider-frame.is-post-slider .nexo-ig-slider-button.is-next {
+  right: 0.75rem;
+}
+
+.nexo-ig-hashtag-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(240px, 0.95fr);
+  flex: 0 0 min(100%, 52rem);
+  min-height: 24rem;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.94);
+  color: #111111;
+  text-decoration: none;
+  box-shadow: 0 1.1rem 3rem rgba(31, 24, 20, 0.08);
+}
+
+.nexo-ig-hashtag-media {
+  position: relative;
+  display: block;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.nexo-ig-hashtag-body {
+  display: grid;
+  align-content: space-between;
+  gap: 1rem;
+  padding: 1.35rem;
+}
+
+.nexo-ig-hashtag-kicker,
+.nexo-ig-post-card-kicker {
+  font-size: 0.76rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(17, 17, 17, 0.56);
+}
+
+.nexo-ig-hashtag-copy,
+.nexo-ig-post-card-copy,
+.nexo-ig-single-post-copy {
+  margin: 0;
+  line-height: 1.55;
+  color: rgba(17, 17, 17, 0.84);
+}
+
+.nexo-ig-hashtag-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.nexo-ig-hashtag-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.25rem 0.75rem;
+  background: rgba(17, 17, 17, 0.06);
+  font-size: 0.76rem;
+  color: rgba(17, 17, 17, 0.72);
+  border-radius: 999px;
+}
+
+.nexo-ig-hashtag-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.nexo-ig-hashtag-date {
+  font-size: 0.82rem;
+  color: rgba(17, 17, 17, 0.56);
+}
+
+.nexo-ig-hashtag-action,
+.nexo-ig-post-card-action {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #111111;
+}
+
+.nexo-ig-collage {
+  display: grid;
+  width: 100%;
+  max-width: 82rem;
+  margin-inline: auto;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-auto-rows: minmax(4.5rem, 6.25rem);
+  gap: 0.35rem;
+}
+
+.nexo-ig-collage-card {
+  width: 100%;
+  min-width: 0;
+  min-height: 100%;
+  aspect-ratio: auto;
+}
+
+.nexo-ig-collage-card[data-shape="hero"] {
+  grid-column: span 6;
+  grid-row: span 6;
+}
+
+.nexo-ig-collage-card[data-shape="square"] {
+  grid-column: span 3;
+  grid-row: span 3;
+}
+
+.nexo-ig-collage-card[data-shape="tall"] {
+  grid-column: span 3;
+  grid-row: span 6;
+}
+
+.nexo-ig-collage-card[data-shape="wide"] {
+  grid-column: span 6;
+  grid-row: span 3;
+}
+
+.nexo-ig-slider-frame.is-post-slider {
+  max-width: 40rem;
+}
+
+.nexo-ig-slider-frame.is-post-slider .nexo-ig-slider-track {
+  gap: 1.25rem;
+}
+
+.nexo-ig-post-card {
+  display: grid;
+  gap: 1rem;
+  flex: 0 0 min(100%, 40rem);
+  color: #111111;
+  text-decoration: none;
+}
+
+.nexo-ig-post-card-media,
+.nexo-ig-single-post-media {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+}
+
+.nexo-ig-post-card-body {
+  display: grid;
+  gap: 0.8rem;
+  justify-items: start;
+  text-align: left;
+}
+
+.nexo-ig-single-post {
+  display: grid;
+  gap: 1.35rem;
+  width: min(100%, 44rem);
+  margin-inline: auto;
+}
+
+.nexo-ig-single-post-link {
+  display: block;
+  width: 100%;
+}
+
+.nexo-ig-single-post-body {
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+  text-align: center;
+}
+
+.nexo-ig-single-post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  font-size: 0.82rem;
+  color: rgba(17, 17, 17, 0.58);
+}
+
+.nexo-ig-single-post-profile-link,
+.nexo-ig-single-post-action {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nexo-ig-single-post-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.nexo-ig-single-post-action {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0 1.2rem;
+  background: rgba(17, 17, 17, 0.92);
+  color: #ffffff;
+}
+
+.nexo-ig-single-post-action:hover,
+.nexo-ig-single-post-action:focus-visible,
+.nexo-ig-single-post-profile-link:hover,
+.nexo-ig-single-post-profile-link:focus-visible {
+  opacity: 0.82;
+}
+
+.nexo-ig-placeholder-slide.is-hashtag-card {
+  flex-basis: min(100%, 52rem);
+  aspect-ratio: 16 / 10;
+}
+
+.nexo-ig-placeholder-slide.is-post-card {
+  flex-basis: min(100%, 40rem);
+  aspect-ratio: 1 / 1;
+}
+
+.nexo-ig-placeholder-slide.is-single-post {
+  width: min(100%, 44rem);
+  min-height: 28rem;
+  aspect-ratio: auto;
+}
+
+.nexo-ig-single-post-body.is-placeholder {
+  width: min(100%, 28rem);
+}
+
+.nexo-ig-placeholder-copy-line {
+  display: block;
+  width: 100%;
+  height: 0.9rem;
+  background: rgba(17, 17, 17, 0.08);
+  border-radius: 999px;
+}
+
+.nexo-ig-placeholder-copy-line.is-wide {
+  width: 100%;
+}
+
+.nexo-ig-placeholder-copy-line.is-short {
+  width: 62%;
+}
+
+.nexo-ig-lightbox-open {
+  overflow: hidden;
+}
+
+.nexo-ig-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+}
+
+.nexo-ig-lightbox[hidden] {
+  display: none;
+}
+
+.nexo-ig-lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(19, 16, 13, 0.72);
+}
+
+.nexo-ig-lightbox-dialog {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1rem;
+  width: min(1120px, 100%);
+  min-width: 0;
+  max-height: 100%;
+}
+
+.nexo-ig-lightbox-figure {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 1rem;
+  background: rgb(248, 245, 239);
+  color: #111111;
+  min-width: 0;
+  max-height: calc(100dvh - 3rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.nexo-ig-lightbox-image {
+  display: block;
+  width: 100%;
+  max-height: min(50dvh, 540px);
+  object-fit: contain;
+  background: rgba(17, 17, 17, 0.08);
+}
+
+.nexo-ig-lightbox-caption {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.nexo-ig-lightbox-type,
+.nexo-ig-lightbox-copy {
+  margin: 0;
+}
+
+.nexo-ig-lightbox-type {
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.62;
+}
+
+.nexo-ig-lightbox-copy {
+  max-width: 70ch;
+  line-height: 1.55;
+}
+
+.nexo-ig-lightbox-link {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.82;
+}
+
+.nexo-ig-lightbox-link:hover,
+.nexo-ig-lightbox-link:focus-visible {
+  opacity: 1;
+}
+
+.nexo-ig-lightbox-close,
+.nexo-ig-lightbox-nav {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  padding: 0;
+  width: 3rem;
+  height: 3rem;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.96);
+  color: #111111;
+  border: 0;
+  border-radius: 999px;
+  box-shadow: 0 0.8rem 2rem rgba(32, 24, 19, 0.16);
+  cursor: pointer;
+}
+
+.nexo-ig-lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.nexo-ig-lightbox-nav:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+@keyframes nexo-ig-sheen {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  55%,
+  100% {
+    transform: translateX(110%);
+  }
+}
+
+@media (max-width: 991px) {
+  .nexo-ig-slider-button {
+    width: 2.9rem;
+    height: 2.9rem;
+  }
+
+  .nexo-ig-slider-button.is-prev {
+    left: -0.5rem;
+  }
+
+  .nexo-ig-slider-button.is-next {
+    right: -0.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .nexo-ig-shell {
+    gap: 1.25rem;
+  }
+
+  .nexo-ig-slider-block {
+    gap: 1.25rem;
+  }
+
+  .nexo-ig-slider-track {
+    gap: 0.5rem;
+  }
+
+  .nexo-ig-slide,
+  .nexo-ig-placeholder-slide {
+    flex-basis: min(82vw, 320px);
+  }
+
+  .nexo-ig-slider-button {
+    width: 2.65rem;
+    height: 2.65rem;
+  }
+
+  .nexo-ig-slider-button.is-prev {
+    left: 0.4rem;
+  }
+
+  .nexo-ig-slider-button.is-next {
+    right: 0.4rem;
+  }
+
+  .nexo-ig-hashtag-card {
+    grid-template-columns: 1fr;
+    flex-basis: min(88vw, 26rem);
+    min-height: auto;
+  }
+
+  .nexo-ig-hashtag-media {
+    aspect-ratio: 1 / 1;
+  }
+
+  .nexo-ig-collage {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: minmax(7rem, 9rem);
+    gap: 0.5rem;
+  }
+
+  .nexo-ig-collage-card[data-shape="hero"],
+  .nexo-ig-collage-card[data-shape="wide"] {
+    grid-column: span 2;
+  }
+
+  .nexo-ig-collage-card[data-shape="hero"] {
+    grid-row: span 4;
+  }
+
+  .nexo-ig-collage-card[data-shape="wide"],
+  .nexo-ig-collage-card[data-shape="square"] {
+    grid-row: span 2;
+  }
+
+  .nexo-ig-collage-card[data-shape="tall"] {
+    grid-column: span 1;
+    grid-row: span 4;
+  }
+
+  .nexo-ig-post-card,
+  .nexo-ig-placeholder-slide.is-post-card {
+    flex-basis: min(88vw, 24rem);
+  }
+
+  .nexo-ig-single-post {
+    width: min(100%, 24rem);
+  }
+
+  .nexo-ig-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+
+  .nexo-ig-lightbox {
+    padding: 1rem;
+  }
+
+  .nexo-ig-lightbox-dialog {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .nexo-ig-lightbox-figure {
+    padding: 0.75rem;
+  }
+
+  .nexo-ig-lightbox-image {
+    width: 100%;
+    max-height: 58vh;
+  }
+
+  .nexo-ig-lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .nexo-ig-lightbox-nav.is-prev {
+    left: 0.75rem;
+  }
+
+  .nexo-ig-lightbox-nav.is-next {
+    right: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nexo-ig-slide-image,
+  .nexo-ig-slider-button,
+  .nexo-ig-lightbox-nav,
+  .nexo-ig-placeholder-sheen {
+    transition: none;
+    animation: none;
+  }
+
+  .nexo-ig-slider-viewport {
+    scroll-behavior: auto;
+  }
+}

@@ -1,0 +1,8 @@
+.env
+.env.*
+!.env.example
+.git
+data
+artifacts
+node_modules
+static-build

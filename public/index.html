@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Instagram Public · NexoWorks</title>
+  <link rel="stylesheet" href="/assets/app.css"><script type="module" src="/assets/app.js"></script>
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="/" aria-label="NexoWorks, inicio">nexo<span>works</span><span class="brand-dot">®</span></a><span class="product-name">Instagram Public</span><button id="logout" class="text-button" hidden>Salir</button></header>
+  <main class="workspace">
+    <div class="page-heading"><div><p class="eyebrow">CONTENIDO QUE CONECTA</p><h1>Tu Instagram.<br>En cada web.</h1></div><p class="intro">Convertí un perfil público en una galería para tus clientes. Un usuario, un widget, un enlace para compartir.</p></div>
+    <div class="workspace-grid">
+      <aside class="composer">
+        <p class="eyebrow">01 / CREAR UN WIDGET</p><h2>Empezá con un @</h2>
+        <form id="create-form">
+          <label for="username">Usuario de Instagram</label><input id="username" name="username" placeholder="@tu.marca" required maxlength="200" autocapitalize="none" spellcheck="false" aria-describedby="username-help"><p class="help" id="username-help">También podés pegar el enlace del perfil.</p>
+          <label for="label">Nombre del cliente</label><input id="label" name="label" placeholder="Ej. Estudio Norte" maxlength="120">
+          <label for="title">Título del widget</label><input id="title" name="title" value="Follow us on Instagram" maxlength="160">
+          <div class="form-columns"><div><label for="template">Diseño</label><select id="template" name="template"><option value="slider">Carrusel</option><option value="grid">Grilla</option><option value="photo-wall">Cuadrícula 4:5 sin espacios</option><option value="social-cards">Tarjetas con compartir</option><option value="collage">Collage</option><option value="post-slider">Carrusel con texto</option><option value="single-post">Una publicación</option><option value="hashtag-show">Hashtags</option></select></div><div><label for="limit">Publicaciones</label><input id="limit" name="limit" type="number" min="1" max="24" value="12" required></div></div>
+          <button class="primary" id="create-button" type="submit">Crear widget <span aria-hidden="true">↗</span></button><p id="form-error" class="error" role="alert" hidden></p>
+        </form>
+        <p class="composer-note">La disponibilidad depende de lo que Instagram muestre públicamente. Si pide iniciar sesión, te lo indicamos acá.</p>
+      </aside>
+      <section class="library" aria-labelledby="library-title">
+        <div class="section-heading"><div><p class="eyebrow">02 / TU COLECCIÓN</p><h2 id="library-title">Widgets <span id="widget-count" class="count">0</span></h2></div><span id="refresh-mode" class="subtle">Actualización automática cada hora*</span></div>
+        <div id="notice" class="notice" role="status" hidden></div>
+        <p id="provider-status" class="notice" role="status" hidden></p>
+        <div id="widgets" aria-live="polite"><p class="loading">Cargando widgets…</p></div>
+        <div id="empty" class="empty" hidden><span class="empty-mark" aria-hidden="true">@</span><h3>El próximo post,<br>también en su web.</h3><p>Creá el primer widget desde el formulario. Acá vas a ver su estado, la galería y el código para insertarlo.</p></div>
+        <section id="detail" class="detail" hidden aria-labelledby="detail-title">
+          <div class="section-heading"><div><p class="eyebrow">03 / VISTA Y CÓDIGO</p><h2 id="detail-title">Vista previa</h2></div><a id="open-widget" class="text-button" target="_blank" rel="noopener">Abrir widget ↗</a></div>
+          <p id="detail-status" class="detail-status"></p>
+          <form id="edit-form" class="edit-form"><div><label for="edit-title">Título</label><input id="edit-title" name="title" maxlength="160"></div><div><label for="edit-template">Diseño</label><select id="edit-template" name="template"><option value="slider">Carrusel</option><option value="grid">Grilla</option><option value="photo-wall">Cuadrícula 4:5 sin espacios</option><option value="social-cards">Tarjetas con compartir</option><option value="collage">Collage</option><option value="post-slider">Carrusel con texto</option><option value="single-post">Una publicación</option><option value="hashtag-show">Hashtags</option></select></div><div><label for="edit-limit">Posts</label><input id="edit-limit" name="limit" type="number" min="1" max="24" required></div><button class="secondary" type="submit">Guardar</button></form>
+          <iframe id="preview" data-nexo-instagram title="Vista previa del widget de Instagram" loading="lazy"></iframe>
+          <div class="snippet-heading"><label for="snippet">Pegá este código en la web del cliente</label><button id="copy" class="text-button">Copiar iframe</button></div><textarea id="snippet" readonly rows="4" spellcheck="false"></textarea>
+          <p class="help">El iframe muestra hasta la cantidad elegida, según las publicaciones disponibles. Los diseños Cuadrícula sin espacios y Tarjetas con compartir incluyen altura automática: copiá también el script. Cada código conserva su diseño para usar ambos en la misma web.</p>
+        </section>
+        <p class="footnote">* Frecuencia configurable en el servidor. Se conserva el último feed obtenido durante un máximo de 24 horas si falla una actualización.</p>
+      </section>
+    </div>
+  </main>
+  <script src="/assets/resize.js" async></script>
+  <footer class="footer"><span>NexoWorks / Instagram Public</span><span>De tu perfil a tu sitio.</span></footer>
+</body>
+</html>

@@ -1,0 +1,9 @@
+node_modules
+data
+artifacts
+.git
+.vercel
+static-build
+.env
+.env.*
+*.log
