@@ -91,6 +91,18 @@ test('both reference layouts share a cached feed without editing the widget or e
   assert.equal(store.get(widget.id).template, 'social-cards');
 });
 
+test('an empty title is saved and sent to the widget without a fallback heading', async t => {
+  const { request, store, service } = await setup(t);
+  const created = await request('/api/admin/widgets', 'POST', { username: 'test.brand', title: 'Follow us on Instagram' });
+  const { widget } = await created.json();
+  await service.tail;
+  assert.equal((await request(`/api/admin/widgets/${widget.id}`, 'PATCH', { title: '   ' })).status, 200);
+  assert.equal(store.get(widget.id).title, '');
+  const result = await (await request(`/api/public/widgets/${widget.id}/config.js`)).text();
+  const config = JSON.parse(result.split('=', 2)[1].slice(0, -1));
+  assert.equal(config.widgetTitle, '');
+});
+
 test('embed overrides reject unknown templates, cap post counts and escape titles', async t => {
   const { request, service } = await setup(t);
   const { widget } = await (await request('/api/admin/widgets', 'POST', { username: 'test.brand', template: 'grid', limit: 6 })).json();

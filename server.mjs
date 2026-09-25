@@ -20,7 +20,7 @@ function embedOptions(query, widget) {
   return {
     widgetTemplate: TEMPLATES.includes(query.template) ? query.template : widget.template,
     feedLimit: Number.isInteger(limit) && limit > 0 ? Math.min(limit, widget.limit) : widget.limit,
-    widgetTitle: typeof query.title === 'string' && query.title.trim() ? query.title.trim().slice(0, 160) : widget.title,
+    widgetTitle: typeof query.title === 'string' ? query.title.trim().slice(0, 160) : widget.title,
   };
 }
 

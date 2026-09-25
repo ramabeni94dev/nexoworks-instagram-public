@@ -1,3 +1,4 @@
 @font-face{font-family:Onest;src:url('/assets/fonts/onest-latin-400-normal.woff2') format('woff2');font-weight:400;font-display:swap}
 @font-face{font-family:Manrope;src:url('/assets/fonts/manrope-latin-700-normal.woff2') format('woff2');font-weight:700;font-display:swap}
 *{box-sizing:border-box}body{margin:0;padding:28px 20px;background:transparent;color:oklch(25% .01 70);font:400 15px/1.6 Onest,sans-serif}.nexo-ig-slider-title,.nexo-ig-profile-name{font-family:Manrope,sans-serif}.nexo-ig-shell{--black:oklch(25% .01 70)}@media(max-width:600px){body{padding:20px 12px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+body[data-nexo-instagram-template="photo-wall"]{padding-inline:0}

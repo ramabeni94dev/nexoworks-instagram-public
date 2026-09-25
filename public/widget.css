@@ -147,6 +147,9 @@
 .nexo-ig-shell:is([data-template="photo-wall"], [data-template="social-cards"]) .nexo-ig-slider-block {
   gap: 28px;
 }
+.nexo-ig-shell[data-template="photo-wall"] .nexo-ig-slider-block {
+  max-width: none;
+}
 .nexo-ig-shell[data-template="photo-wall"] .nexo-ig-slider-title {
   font-size: 22px;
   line-height: 1.3;
@@ -155,13 +158,14 @@
 .nexo-ig-shell[data-template="photo-wall"] .nexo-ig-reference-layout {
   display: grid;
   gap: 32px;
-  justify-items: center;
+  justify-items: start;
 }
 .nexo-ig-shell[data-template="photo-wall"] .nexo-ig-profile {
   align-items: flex-start;
   justify-content: flex-start;
   width: min(100%, 42rem);
   gap: 32px;
+  padding-inline: 0;
 }
 .nexo-ig-shell[data-template="photo-wall"] .nexo-ig-profile-picture {
   flex-basis: 48px;
@@ -176,8 +180,7 @@
   font-size: 1rem;
 }
 .nexo-ig-shell[data-template="photo-wall"] .nexo-ig-profile-bio {
-  max-width: 50ch;
-  font-size: 0.94rem;
+  display: none;
 }
 .nexo-ig-shell[data-template="social-cards"] .nexo-ig-slider-title {
   font-size: 28px;

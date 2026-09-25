@@ -52,9 +52,9 @@
       feedUrl: String(rawConfig.feedUrl || "/api/instagram/feed").trim(),
       widgetTemplate: normalizeTemplate(rawConfig.widgetTemplate),
       feedLimit: readFeedLimit(rawConfig.feedLimit),
-      widgetTitle:
-        String(rawConfig.widgetTitle || "Follow us on Instagram").trim() ||
-        "Follow us on Instagram",
+      widgetTitle: Object.prototype.hasOwnProperty.call(rawConfig, "widgetTitle")
+        ? String(rawConfig.widgetTitle ?? "").trim()
+        : "Follow us on Instagram",
       showConnectCta: Boolean(rawConfig.showConnectCta),
     };
   }
@@ -216,6 +216,8 @@
   }
 
   function buildHeadingMarkup() {
+    if (!runtimeConfig.widgetTitle) return "";
+
     return (
       '<div class="nexo-ig-slider-heading">' +
       '<h3 class="nexo-ig-slider-title">' +
@@ -1034,6 +1036,8 @@
   }
 
   async function bootWidget() {
+    document.body.dataset.nexoInstagramTemplate = runtimeConfig.widgetTemplate;
+
     const root = ensureRoot();
 
     if (!root) {
